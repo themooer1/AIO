@@ -44,7 +44,7 @@ setup(
               'venv.lib.python3.6.site-packages.pip-9.0.1-py3.6.egg.pip._vendor.pkg_resources',
               'venv.lib.python3.6.site-packages.pip-9.0.1-py3.6.egg.pip.commands',
               'venv.lib.python3.6.site-packages.pip-9.0.1-py3.6.egg.pip.operations'],
-    url='https://github.com/themooer1/AlexaAIO/tree/master/AIO',
+    url='https://github.com/themooer1/AIO',
     license='MIT',
     author='David Smith',
     author_email='fluffy1781@gmail.com',
