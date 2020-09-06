@@ -36,7 +36,7 @@ def dateValue(date):
 
 def makeRadioURL(date):
     """Gets the URL for an episode from its date."""
-    urlbase = "https://fotfproxy.tk/fotf/mp3/aio/"
+    urlbase = "https://media.focusonthefamily.com/fotf/mp3/aio/"
     urltip = "aio_{0}.mp3".format(date)
     # Sometimes the URLS contain aio and sometimes aiow.  I don't see a pattern so I try both.
     if requests.get(urlbase + urltip, timeout=2, stream=True).status_code == 200:
@@ -58,7 +58,7 @@ def getRadioEpisodes() -> list:
 
 
 def getFreeEpisodes() -> list:
-    """Returns free episodes as a list of dicts, with an additional parameter, 'url', which links to the episode as an audio file."""
+    """Returns free episodes as a list of dicts, with an additional parameter, 'url', which links to the episode as an audio file. """
     global freeURL
     e = requests.get(freeURL, timeout=2).json()['Episodes']
     for episode in e:
@@ -126,7 +126,8 @@ def fuzzyMatch(string1, string2):
 
 def proxyURL(url: str):
     """Redirects an AIO media link to an https, proxied link to the same file."""
-    return url.replace("http://media.focusonthefamily.com/", "https://fotfproxy.tk/")
+    # Proxying is no longer needed as media.focusonthefamily.com supports HTTPS
+    return url.replace('http://', 'https://')
 
 # ------Tests------
 

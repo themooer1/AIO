@@ -1,7 +1,11 @@
 import unittest
 
-import AIO.AIO
+from AIO import AIO
+
 
 class EpisodeTests(unittest.TestCase):
     def test_get_radio(self):
-        AIO.AIO.
+        e = AIO.getRadioEpisodes()
+        for ep in e:
+            assert ep['url'].startswith('https://media.focusonthefamily.com/')
+        print(e)
